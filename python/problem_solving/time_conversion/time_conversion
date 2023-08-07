@@ -1,0 +1,11 @@
+def timeConversion(s):
+    hours = int(s[:2])
+    rest_of_time_string = s[2:8]
+    if s[-2] == "P" and hours == 12:
+        return f"12{rest_of_time_string}"
+    elif s[-2] == "P":
+        return f"{hours + 12}{rest_of_time_string}"
+    elif s[-2] == "A" and hours == 12:
+        return f"00{rest_of_time_string}"
+    else:
+        return f"{s[:2]}{rest_of_time_string}"
